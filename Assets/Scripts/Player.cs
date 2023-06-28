@@ -26,6 +26,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerMovement();
+    }
+
+    void PlayerMovement()
+    {
         // Horizontal Input is used to control movement of player (to move right or left)
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * _speed * horizontalInput);  
@@ -37,6 +42,12 @@ public class Player : MonoBehaviour
             _nextJumpTime = Time.time + _coolDownTime;
         }
         
+        // TELEPORT - if player is falls, teleport him back to a start position
+        if(transform.position.y < -10)
+        {
+            transform.position = new Vector3(0f, 2f, 0f);
+        }
         
     }
 }
+
