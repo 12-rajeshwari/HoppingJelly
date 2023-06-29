@@ -10,16 +10,26 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody _RB;
     
+    [SerializeField]
+    private GameObject _capsulePrefab;
+    
     private float _jumpingSpeed = 10f;
     
-    // -- time delay -- 
+    // -- time delay to jump -- 
     private float _coolDownTime = 1f;
     private float _nextJumpTime = 0f;
     
+    // -- time delay to fire capsule --
+    private float _fireCoolDownTime = 0f;
+    private float _nextFireTime = 0.5f;
+    
+    // Player Lives
+    private int _lives = 5;
     
     // Start is called before the first frame update
     void Start()
     {
+        // Start position
         transform.position = new Vector3(0f, 0f, 0f);
     }
 
@@ -27,6 +37,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        
+        // Firing Capsule at enemy 
+        if (Input.GetKeyDown(KeyCode.E) && _nextFireTime < Time.time)
+        {
+            Instantiate(_capsulePrefab, transform.position + new Vector3(0f, 0.65f, 0f), Quaternion.identity);
+            _nextFireTime = Time.time + _fireCoolDownTime;
+        }
+        
+        Damage();
+        
     }
 
     void PlayerMovement()
@@ -48,6 +68,19 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(0f, 2f, 0f);
         }
         
+    }
+    
+    // For reducing player's live
+    public void Damage()
+    {
+        _lives --;
+        Debug.Log("Damage"+ _lives);
+
+        if(_lives == 0)
+        {
+            Debug.Log("Death");
+        }
+
     }
 }
 
