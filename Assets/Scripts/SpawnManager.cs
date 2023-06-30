@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     {
         while (_alive)
         {
-            Instantiate(_enemyPrefab, new Vector3(Random.Range(-8f, 8f), 10f, 0), Quaternion.identity, this.transform);
+            Instantiate(_enemyPrefab, new Vector3(Random.Range(-10f, 15f), 40f, 0), Quaternion.identity, this.transform);
             yield return new WaitForSeconds(_delay);
         }
 

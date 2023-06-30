@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] 
+    private float _speed = 5f;
     private float _jumpingSpeed = 10f;
 
-    [SerializeField] private Rigidbody _RB;
+    [SerializeField] 
+    private Rigidbody _RB;
 
-    [SerializeField] private GameObject _capsulePrefab;
+    [SerializeField] 
+    private GameObject _capsulePrefab;
 
-    [SerializeField] private GameObject _spawnManager;
+    [SerializeField] 
+    private GameObject _spawnManager;
 
+    [SerializeField]
+    private UI_Manager _uiManager;
 
     // -- time delay to jump -- 
     private float _coolDownTime = 1f;
@@ -41,6 +47,8 @@ public class Player : MonoBehaviour
             _mpb.Clear();
         }
 
+        // UPDATE LIVES
+        _uiManager.UpdateLives(_lives);
 
     }
 
@@ -63,6 +71,7 @@ public class Player : MonoBehaviour
 
         // Update Player's live
         _lives--;
+        _uiManager.UpdateLives(_lives);
         Debug.Log("Damage -1  Lives: " + _lives);
 
         // CHANGE MATERIAL
