@@ -5,7 +5,7 @@ using UnityEngine;
 public class Capsule : MonoBehaviour
 {
    
-    private float _capsulespeed = 5f;
+    private float _capsulespeed = 3f;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +14,7 @@ public class Capsule : MonoBehaviour
         transform.Translate(Vector3.up *_capsulespeed * Time.deltaTime);
 
         // DESTROY - if certain height is reached 
-        if(transform.position.y > 10f)
+        if(transform.position.y > 35f)
         {
             Destroy(this.gameObject);
         }

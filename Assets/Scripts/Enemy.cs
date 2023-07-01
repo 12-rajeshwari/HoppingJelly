@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     
     [SerializeField]
-    private float _enemySpeed = 2f;
+    private float _enemySpeed = 1f;
 
    
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         // TRANSPORT BACK TO START
         if(transform.position.y < -4.5)
         {
-            transform.position = new Vector3(Random.Range(-10f, 15f), 40f, 0f);
+            transform.position = new Vector3(Random.Range(-10f, 15f), 35f, 0f);
         }
     }
     
