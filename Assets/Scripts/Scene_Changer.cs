@@ -8,7 +8,8 @@ public class Scene_Changer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            SceneManager.LoadScene(1); 
+            SceneManager.LoadScene(1);
+            
         }
         
     }

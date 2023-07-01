@@ -14,7 +14,7 @@ public class Coin_Script : MonoBehaviour
     // DEFINE WINNING STATE 
     private void OnTriggerEnter(Collider other)
     {
-        // IF PLAYER SELECTS THE GOLDEN COIN ...
+        // If the player collides with display stand ...
         if (other.CompareTag("Player"))
         {
             _spawnManager.onPlayerWin();

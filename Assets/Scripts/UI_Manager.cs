@@ -26,6 +26,7 @@ public class UI_Manager : MonoBehaviour
     {
         // UPDATE TEXT 
         _livestext.text = "lives: " + health;
+        
     }
-
+    
 }
