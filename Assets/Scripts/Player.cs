@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -101,9 +102,11 @@ public class Player : MonoBehaviour
             {
                 Debug.LogError("SpawnManager not assigned.");
             }
+            
         }
     }
-
+    
+    
     void PlayerMovement()
     {
         // Horizontal Input is used to control movement of player (to move right or left)

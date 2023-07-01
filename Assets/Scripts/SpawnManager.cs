@@ -22,9 +22,9 @@ public class SpawnManager : MonoBehaviour
     //Check Player's won or loose
     private bool _win = false;
     
+    
     [SerializeField]
     private UI_Manager _uiManager;
-
     void Start()
     {
         StartCoroutine(SpawnSystem());
