@@ -8,8 +8,7 @@ public class Camera_Movement : MonoBehaviour
     [SerializeField]
     private Transform target;
     public Vector3 offset; 
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         offset = transform.position - target.transform.position;  
