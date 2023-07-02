@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] 
     private float _speed = 5f;
-    private float _jumpingSpeed = 10f;
+    private float _jumpingSpeed = 12f;
 
     [SerializeField] 
     private Rigidbody _RB;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private UI_Manager _uiManager;
 
     // -- time delay to jump -- 
-    private float _coolDownTime = 1f;
+    private float _coolDownTime = 0.5f;
     private float _nextJumpTime = 0f;
 
     // -- time delay to fire capsule --

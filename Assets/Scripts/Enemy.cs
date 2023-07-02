@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     
     [SerializeField]
-    private float _enemySpeed = 1f;
+    private float _enemySpeed = 3f;
 
    
     // Update is called once per frame

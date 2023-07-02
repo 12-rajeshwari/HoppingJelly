@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     private GameObject _enemyPrefab;
     
     //Set delay time to create new enemy
-    private float _delay = 2f;
+    private float _delay = 5f;
     
     //Check Player's is alive or dead
     private bool _alive = true;
